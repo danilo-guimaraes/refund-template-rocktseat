@@ -7,6 +7,19 @@
 :root {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
+
+    --bg: #0f172a;
+    --bg-accent: #111c36;
+    --surface: #15213f;
+    --surface-strong: #1b2747;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #2b3a63;
+    --primary: #fbbf24;
+    --primary-hover: #f59e0b;
+    --secondary: #f43f5e;
+    --secondary-soft: #fb7185;
+    --scrollbar: #263452;
 }
 
 ::-webkit-scrollbar {
@@ -18,20 +31,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #e4ece9;
+    background: var(--scrollbar);
 }
 
 body {
     width: 100%;
     height: 100vh;
 
-    background-color: #e4ece9;
+    background: radial-gradient(circle at top, var(--bg-accent), var(--bg));
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    color: #1f2523;
+    color: var(--text);
 }
 
 .logo {
@@ -46,7 +59,7 @@ main section {
 }
 
 form {
-    background-color: #f9fbfa;
+    background: linear-gradient(180deg, var(--surface-strong), var(--surface));
     border-radius: 1rem;
     padding: 2.5rem;
     max-width: 462px;
@@ -61,7 +74,7 @@ form h1 {
 
 form p {
     font-size: 0.87rem;
-    color: #4d5c57;
+    color: var(--text-muted);
     margin: 0.75rem 0 2.5rem;
 }
 
@@ -73,12 +86,12 @@ fieldset {
 fieldset legend {
     text-transform: uppercase;
     font-size: 0.62rem;
-    color: #4d5c57;
+    color: var(--text-muted);
     margin-bottom: 0.5rem;
 }
 
 fieldset:focus-within legend {
-    color: #1f8459;
+    color: var(--primary);
     font-weight: 700;
 }
 
@@ -87,11 +100,11 @@ select {
     flex: 1;
     height: 3rem;
     border-radius: 0.5rem;
-    border: 1px solid #cdd5d2;
+    border: 1px solid var(--border);
     padding: 0 1rem;
     font-size: 0.87rem;
-    color: #1f2523;
-    background-color: transparent;
+    color: #000000;
+    background-color: #f8fafc;
     outline: none;
 }
 
@@ -103,14 +116,18 @@ select {
     background-size: 1.25rem auto;
 }
 
+select option {
+    color: #000000;
+}
+
 input::placeholder,
 select:invalid {
-    color: #4d5c57;
+    color: var(--text-muted);
 }
 
 input:focus,
 select:focus {
-    border: 1.5px solid #1f8459;
+    border: 1.5px solid var(--primary);
 }
 
 .inputs-row {
@@ -134,8 +151,8 @@ form button {
     border-radius: 0.5rem;
     border: none;
     font-size: 0.87rem;
-    color: #ffffff;
-    background-color: #1f8459;
+    color: #0f172a;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     font-weight: 700;
     padding: 1rem 1.25rem;
     cursor: pointer;
@@ -144,7 +161,7 @@ form button {
 }
 
 button:hover {
-    background-color: #2cb178;
+    background: linear-gradient(135deg, var(--primary-hover), var(--secondary-soft));
 }
 
 form button:last-child {
@@ -152,7 +169,7 @@ form button:last-child {
 }
 
 aside {
-    background-color: #f9fbfa;
+    background: linear-gradient(180deg, var(--surface-strong), var(--surface));
     border-radius: 1rem;
     padding: 2.5rem;
     max-width: 462px;
@@ -166,36 +183,36 @@ aside header {
 
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: #e4ece9;
+    border-bottom-color: var(--border);
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
 aside header p {
-    color: #4d5c57;
+    color: var(--text-muted);
     font-weight: 400;
     font-size: 1rem;
 }
 
 aside header p span {
-    color: #4d5c57;
+    color: var(--text-muted);
     font-weight: 400;
     font-size: 0.87rem;
 }
 
 aside header p i {
-    color: #cdd5d2;
+    color: var(--primary);
     margin: 0 0.5rem;
     font-style: normal;
 }
 
 aside header h2 {
     font-size: 1rem;
-    color: #1f2523;
+    color: var(--text);
 }
 
 aside header small {
-    color: #4d5c57;
+    color: var(--text-muted);
     font-weight: 400;
     font-size: 0.75rem;
     margin-right: 0.25rem;
@@ -234,23 +251,23 @@ aside ul {
 
 .expense-info strong {
     font-size: 0.87rem;
-    color: #1f2523;
+    color: var(--text);
 }
 
 .expense-info span {
     font-size: 0.75rem;
-    color: #4d5c57;
+    color: var(--text-muted);
 }
 
 .expense-amount {
     font-size: 0.87rem;
-    color: #1f2523;
+    color: var(--text);
     font-weight: 600;
 }
 
 .expense-amount small {
     font-size: 0.75rem;
-    color: #4d5c57;
+    color: var(--text-muted);
     font-weight: 400;
     margin-right: 0.25rem;
 }
